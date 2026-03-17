@@ -22,7 +22,7 @@ document.addEventListener("click", async (e) => {
 });
 
 async function enviarDados(dados){
-await fetch(host+":4444/fish", {
+await fetch(host+"/fish", {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
