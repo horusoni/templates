@@ -1,1 +1,1 @@
-const host = "https://ciphertracer-eta.vercel.app"
+const host = "https://api.ciphertracer.com.br"
