@@ -65,7 +65,7 @@ document.addEventListener('click', async (e) => {
 
 
 async function enviar(dados) {
-    const res = await fetch(host+":4444/fish",{
+    const res = await fetch(host+"/fish",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
